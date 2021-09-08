@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="WhiteColorPrimary">#d81b60</color>
+    <color name="WhiteColorPrimaryDark">#a00037</color>
+    <color name="WhiteColorAccent">#DCDCDC</color>
+    <color name="WhiteNavigationBarColor">#919191</color>
+    <color name="WhiteBackground">#fff</color>
+    <color name="WhiteBlur">#AACDCDCD</color>
+
+    <color name="DarkColorPrimary">#d81b60</color>
+    <color name="DarkColorPrimaryDark">#a00037</color>
+    <color name="DarkColorAccent">#3C3C3C</color>
+    <color name="DarkNavigationBarColor">#000</color>
+    <color name="DarkBackground">#303030</color>
+    <color name="DarkBlur">#AA181818</color>
+
+    <color name="white">#fff</color>
+    <color name="secondaryText">#dedede</color>
+    <color name="transparent">#00FFFFFF</color>
+
+    <color name="transparentLight">#40FFFFFF</color>
+    <color name="transparentDark">#40000000</color>
+
+    <color name="shrine_red_800">#AD1457</color>
+    <color name="shrine_red_100">#FF80AB</color>
+
+</resources>

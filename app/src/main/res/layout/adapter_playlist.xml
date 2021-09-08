@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="playlist"
+            type="rahbari.erfan.mosito.models.PlaylistLibrary" />
+    </data>
+
+    <com.jcminarro.roundkornerlayout.RoundKornerRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="5dp"
+        app:corner_radius="4dp">
+
+        <ImageView
+            android:id="@+id/imgPicture"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#455A64"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerInside"
+            app:loadImage="@{playlist.playlist.picture}"
+            app:placeholder="@{@drawable/ic_playlist_play}" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/bg_gradient" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:padding="7dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{playlist.playlist.title}"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{playlist.playlist.musics_count+ ` `+ @string/musics + `, ` + playlist.playlist.users_count + ` ` + @string/members}"
+                android:textColor="@color/secondaryText" />
+        </LinearLayout>
+
+    </com.jcminarro.roundkornerlayout.RoundKornerRelativeLayout>
+
+</layout>

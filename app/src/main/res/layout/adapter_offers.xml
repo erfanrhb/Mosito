@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="offer"
+            type="rahbari.erfan.mosito.models.Offer" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="8dp"
+        app:cardBackgroundColor="?attr/colorBgAccent"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="3dp">
+
+        <com.jcminarro.roundkornerlayout.RoundKornerRelativeLayout
+            android:layout_width="300dp"
+            android:layout_height="150dp"
+            app:top_left_corner_radius="5dp"
+            app:top_right_corner_radius="5dp">
+
+            <ImageView
+                android:id="@+id/imgPicture"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#455A64"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerInside"
+                app:loadImage="@{offer.picture}"
+                app:placeholder="@{@drawable/ic_headset}" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/bg_gradient" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:lines="1"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:text="@{offer.title}"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvPerformer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:lines="1"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:text="@{offer.subtitle}"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+        </com.jcminarro.roundkornerlayout.RoundKornerRelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

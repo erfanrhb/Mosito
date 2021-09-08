@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="musicsCount"
+            type="Integer" />
+
+        <variable
+            name="artistsCount"
+            type="Integer" />
+
+        <variable
+            name="albumsCount"
+            type="Integer" />
+
+        <variable
+            name="playlistsCount"
+            type="Integer" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="45dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="@{artistsCount &lt;= 0 ? View.GONE : View.VISIBLE}">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="@string/artists"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{artistsCount == 1 ? @string/artist_found : (artistsCount + ` ` + @string/artists_found)}" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_artists"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:scrollbars="none"
+                android:visibility="@{artistsCount &lt;= 0 ? View.GONE : View.VISIBLE}" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="@{musicsCount &lt;= 0 ? View.GONE : View.VISIBLE}">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="@string/musics"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{musicsCount == 1 ? @string/music_found : (musicsCount + ` ` + @string/musics_found)}" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnMusicSeeAll"
+                    style="@style/textButton"
+                    android:text="@string/see_all"
+                    android:visibility="@{musicsCount > 12 ? View.VISIBLE : View.GONE}" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_musics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:scrollbars="none"
+                android:visibility="@{musicsCount &lt;= 0 ? View.GONE : View.VISIBLE}" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="@{albumsCount &lt;= 0 ? View.GONE : View.VISIBLE}">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="@string/albums"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{albumsCount == 1 ? @string/album_found : (albumsCount + ` ` + @string/albums_found)}" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnAlbumsSeeAll"
+                    style="@style/textButton"
+                    android:text="@string/see_all"
+                    android:visibility="@{musicsCount > 6 ? View.VISIBLE : View.GONE}" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_albums"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:scrollbars="none"
+                android:visibility="@{albumsCount &lt;= 0 ? View.GONE : View.VISIBLE}" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="@{playlistsCount &lt;= 0 ? View.GONE : View.VISIBLE}">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="@string/playlists"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{playlistsCount == 1 ? @string/playlist_found : (playlistsCount + ` ` + @string/playlists_found)}" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPlaylistsSeeAll"
+                    style="@style/textButton"
+                    android:text="@string/see_all"
+                    android:visibility="@{playlistsCount > 6 ? View.VISIBLE : View.GONE}" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_playlists"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:scrollbars="none"
+                android:visibility="@{playlistsCount &lt;= 0 ? View.GONE : View.VISIBLE}" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="music"
+            type="rahbari.erfan.mosito.models.Music" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="8dp"
+        app:cardBackgroundColor="?attr/colorBgAccent"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="3dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.jcminarro.roundkornerlayout.RoundKornerRelativeLayout
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:top_left_corner_radius="5dp"
+                app:top_right_corner_radius="5dp">
+
+                <ImageView
+                    android:id="@+id/imgPicture"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#455A64"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="centerInside"
+                    app:loadImage="@{music.picture}"
+                    app:placeholder="@{@drawable/ic_headset}" />
+
+            </com.jcminarro.roundkornerlayout.RoundKornerRelativeLayout>
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:lines="1"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:text="@{music.title}"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvPerformer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:lines="1"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:text="@{music.performer}"
+                android:textColor="#8C8C8C"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

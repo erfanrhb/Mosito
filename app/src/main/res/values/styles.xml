@@ -1,0 +1,110 @@
+<resources>
+
+    <style name="AppTheme.Dark" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorBg">@color/DarkBackground</item>
+        <item name="colorPrimary">@color/DarkColorPrimary</item>
+        <item name="colorPrimaryDark">@color/DarkColorPrimaryDark</item>
+        <item name="colorBgAccent">@color/DarkColorAccent</item>
+        <item name="colorAccent">@color/DarkColorAccent</item>
+        <item name="colorText">@color/WhiteColorAccent</item>
+        <item name="android:colorBackground">@color/DarkBackground</item>
+        <item name="android:navigationBarColor">@color/DarkNavigationBarColor</item>
+        <item name="blurBg">@color/DarkBlur</item>
+        <item name="themeTransparent">@color/transparentDark</item>
+        <item name="themeTransparentAgain">@color/transparentLight</item>
+    </style>
+
+    <style name="AppTheme.Light" parent="AppTheme.Dark">
+        <item name="colorBg">@color/WhiteBackground</item>
+        <item name="colorPrimary">@color/WhiteColorPrimary</item>
+        <item name="colorPrimaryDark">@color/WhiteColorPrimaryDark</item>
+        <item name="colorBgAccent">@color/WhiteColorAccent</item>
+        <item name="colorAccent">@color/WhiteColorAccent</item>
+        <item name="colorText">@color/DarkColorAccent</item>
+        <item name="android:colorBackground">@color/WhiteBackground</item>
+        <item name="android:navigationBarColor">@color/WhiteNavigationBarColor</item>
+        <item name="blurBg">@color/WhiteBlur</item>
+        <item name="themeTransparent">@color/transparentLight</item>
+        <item name="themeTransparentAgain">@color/transparentDark</item>
+    </style>
+
+    <style name="libraryMenuButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">0dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="iconTint">?colorPrimary</item>
+        <item name="android:textColor">?colorPrimary</item>
+        <item name="backgroundTint">?colorBg</item>
+        <item name="cornerRadius">0dp</item>
+        <item name="rippleColor">?colorPrimary</item>
+    </style>
+
+    <style name="circleButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="cornerRadius">48dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="iconPadding">0dp</item>
+        <item name="iconTint">?attr/colorPrimary</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="iconGravity">textStart</item>
+    </style>
+
+    <style name="defaultButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">35dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingStart">6dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingEnd">6dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">12sp</item>
+        <item name="cornerRadius">35dp</item>
+        <item name="iconPadding">1dp</item>
+        <item name="iconSize">20dp</item>
+        <item name="iconTint">@color/white</item>
+    </style>
+
+    <style name="secondaryButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">35dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingStart">6dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingEnd">6dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="backgroundTint">?themeTransparent</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="cornerRadius">4dp</item>
+        <item name="iconTint">?attr/colorPrimary</item>
+    </style>
+
+    <style name="textButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">35dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingStart">6dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingEnd">6dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:textSize">12sp</item>
+        <item name="cornerRadius">18dp</item>
+        <item name="iconPadding">1dp</item>
+        <item name="iconSize">20dp</item>
+        <item name="iconTint">?attr/colorPrimary</item>
+    </style>
+
+</resources>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.jcminarro.roundkornerlayout.RoundKornerRelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        app:corner_radius="20dp">
+
+        <eightbitlab.com.blurview.BlurView
+            android:id="@+id/blurView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:blurOverlayColor="?attr/blurBg">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/success"
+                android:textColor="?attr/colorText"
+                android:textSize="16sp"
+                app:drawableTint="?attr/colorText"
+                app:drawableTopCompat="@drawable/ic_check_large" />
+        </eightbitlab.com.blurview.BlurView>
+    </com.jcminarro.roundkornerlayout.RoundKornerRelativeLayout>
+</layout>

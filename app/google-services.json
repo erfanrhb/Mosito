@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "422220489505",
+    "firebase_url": "https://mosito-40e50.firebaseio.com",
+    "project_id": "mosito-40e50",
+    "storage_bucket": "mosito-40e50.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:422220489505:android:a7500ea8e52e1b0e535460",
+        "android_client_info": {
+          "package_name": "rahbari.erfan.mosito"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "422220489505-bkbm15eobauu1jba91qktai2a01n8ec8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHVyLZs0gwuz6pFo9ow1-zMiLwRcEiFuA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "422220489505-bkbm15eobauu1jba91qktai2a01n8ec8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

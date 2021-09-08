@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="55dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="7dp"
+                    android:text="@string/library"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnMusics"
+                    style="@style/libraryMenuButton"
+                    android:text="@string/musics"
+                    app:icon="@drawable/ic_headset" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnAlbums"
+                    style="@style/libraryMenuButton"
+                    android:text="@string/albums"
+                    app:icon="@drawable/ic_library" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPlaylists"
+                    style="@style/libraryMenuButton"
+                    android:text="@string/playlists"
+                    app:icon="@drawable/ic_playlist_play" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnArtists"
+                    style="@style/libraryMenuButton"
+                    android:text="@string/artists"
+                    app:icon="@drawable/ic_mic_black" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="7dp"
+                    android:text="@string/recently_added"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="5dp"
+                    android:scrollbars="none" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>

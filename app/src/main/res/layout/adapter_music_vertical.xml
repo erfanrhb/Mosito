@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="musicLibrary"
+            type="rahbari.erfan.mosito.models.MusicLibrary" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/rootLinear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <com.jcminarro.roundkornerlayout.RoundKornerRelativeLayout
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:corner_radius="5dp">
+
+            <ImageView
+                android:id="@+id/imgPicture"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#455A64"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerInside"
+                app:loadImageXs="@{musicLibrary.music.picture}"
+                app:placeholder="@{@drawable/ic_headset}" />
+
+        </com.jcminarro.roundkornerlayout.RoundKornerRelativeLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:text="@{musicLibrary.music.title}"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvPerformer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:text="@{musicLibrary.music.performer}"
+                android:textColor="#8C8C8C"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAction"
+            style="@style/circleButton"
+            android:visibility="@{musicLibrary.library != null &amp;&amp; musicLibrary.library.download ? View.GONE : View.VISIBLE}"
+            app:icon="@{(musicLibrary.library == null || musicLibrary.library.getDeleted_at() != null) ? @drawable/ic_add : (musicLibrary.library.download ? null : @drawable/ic_download)}" />
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="artist"
+            type="rahbari.erfan.mosito.models.Artist" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="3dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.jcminarro.roundkornerlayout.RoundKornerRelativeLayout
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:gravity="center"
+            app:corner_radius="130dp">
+
+            <ImageView
+                android:id="@+id/imgPicture"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#455A64"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerInside"
+                app:loadImage="@{artist.picture}"
+                app:placeholder="@{@drawable/ic_mic_black}" />
+
+        </com.jcminarro.roundkornerlayout.RoundKornerRelativeLayout>
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:lines="1"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:text="@{artist.name}"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="playlistLibrary"
+            type="rahbari.erfan.mosito.models.PlaylistLibrary" />
+
+        <variable
+            name="details"
+            type="String" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorBg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <com.jcminarro.roundkornerlayout.RoundKornerRelativeLayout
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    app:corner_radius="5dp">
+
+                    <ImageView
+                        android:id="@+id/imgAlbumCover"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/app_name"
+                        android:scaleType="centerCrop"
+                        app:loadImage="@{playlistLibrary.playlist.picture}"
+                        app:placeholder="@{@drawable/ic_playlist_play}" />
+
+                </com.jcminarro.roundkornerlayout.RoundKornerRelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="7dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{playlistLibrary.playlist.title}"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{playlistLibrary.playlist.description}"
+                        android:textStyle="italic"
+                        android:visibility="@{playlistLibrary.playlist.description != null &amp;&amp; playlistLibrary.playlist.description.length() > 0 ? View.VISIBLE : View.GONE}" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        tools:ignore="NestedWeights" />
+
+                    <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorAccent"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        app:corner_radius="100dp">
+
+                        <com.jcminarro.roundkornerlayout.RoundKornerRelativeLayout
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            app:corner_radius="38dp">
+
+                            <ImageView
+                                loadImage="@{playlistLibrary.playlist.creator.picture}"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:contentDescription="@{playlistLibrary.playlist.creator.name}"
+                                android:scaleType="centerCrop"
+                                app:placeholder="@{@drawable/ic_mic_black}" />
+
+                        </com.jcminarro.roundkornerlayout.RoundKornerRelativeLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:text="@{playlistLibrary.playlist.creator.name}" />
+
+                    </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        tools:ignore="NestedWeights" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnAdd"
+                        style="@style/defaultButton"
+                        android:layout_width="wrap_content"
+                        android:text="@string/add"
+                        android:visibility="@{playlistLibrary.library == null || playlistLibrary.library.deleted_at != null ? View.VISIBLE : View.GONE}"
+                        app:icon="@drawable/ic_add" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSub"
+                        style="@style/defaultButton"
+                        android:text="@string/removed_from_library"
+                        android:visibility="@{playlistLibrary.library != null &amp;&amp; playlistLibrary.library.deleted_at == null ? View.VISIBLE : View.GONE}"
+                        app:backgroundTint="?themeTransparent"
+                        app:icon="@drawable/ic_close" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="2dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPlay"
+                    style="@style/secondaryButton"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:text="@string/play"
+                    app:icon="@drawable/ic_play"
+                    app:iconGravity="textStart" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnShuffle"
+                    style="@style/secondaryButton"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:text="@string/shuffle"
+                    app:icon="@drawable/ic_shuffle"
+                    app:iconGravity="textStart" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?colorBgAccent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_musics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:scrollbars="none" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

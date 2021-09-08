@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="music"
+            type="rahbari.erfan.mosito.models.Music" />
+    </data>
+
+    <eightbitlab.com.blurview.BlurView
+        android:id="@+id/blurView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:blurOverlayColor="?attr/blurBg">
+
+        <LinearLayout
+            android:id="@+id/rootView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/relativeProgress"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#4D000000">
+
+                <View
+                    android:id="@+id/viewBuffer"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#4DFE4378" />
+
+                <View
+                    android:id="@+id/viewProgress"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="?attr/colorPrimary" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <com.jcminarro.roundkornerlayout.RoundKornerRelativeLayout
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:corner_radius="5dp">
+
+                    <ImageView
+                        android:id="@+id/imgPicture"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#455A64"
+                        android:contentDescription="@string/app_name"
+                        android:scaleType="centerInside"
+                        app:loadImage="@{music.picture}"
+                        app:placeholder="@{@drawable/ic_headset}"
+                        app:srcCompat="@drawable/ic_headset" />
+
+                </com.jcminarro.roundkornerlayout.RoundKornerRelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lines="1"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
+                        android:text="@{music.title}"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvPerformer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lines="1"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
+                        android:text="@{music.performer}"
+                        android:textColor="#8C8C8C"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPlayPause"
+                    style="@style/circleButton"
+                    app:icon="@drawable/ic_play"
+                    app:iconTint="@color/white"
+                    app:rippleColor="@color/white" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnNext"
+                    style="@style/circleButton"
+                    app:icon="@drawable/ic_next"
+                    app:iconTint="@color/white"
+                    app:rippleColor="@color/white" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/progress_color"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </eightbitlab.com.blurview.BlurView>
+
+</layout>

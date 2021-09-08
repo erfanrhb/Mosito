@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="artist"
+            type="rahbari.erfan.mosito.models.Artist" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <com.jcminarro.roundkornerlayout.RoundKornerRelativeLayout
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            app:corner_radius="70dp">
+
+            <ImageView
+                android:id="@+id/imgPicture"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#455A64"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerInside"
+                app:loadImage="@{artist.picture}"
+                app:placeholder="@{@drawable/ic_mic_black}" />
+
+        </com.jcminarro.roundkornerlayout.RoundKornerRelativeLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="@{artist.name}"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</layout>

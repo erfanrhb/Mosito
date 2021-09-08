@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="colorBgAccent" format="color" />
+    <attr name="colorText" format="color" />
+    <attr name="colorBg" format="color" />
+    <attr name="blurBg" format="color" />
+    <attr name="themeTransparent" format="color" />
+    <attr name="themeTransparentAgain" format="color" />
+
+    <attr name="top_left_corner_radius" />
+    <attr name="bottom_right_corner_radius" />
+    <attr name="bottom_left_corner_radius" />
+    <attr name="top_right_corner_radius" />
+</resources>

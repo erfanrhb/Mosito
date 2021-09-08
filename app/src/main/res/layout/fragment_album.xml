@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="albumLibrary"
+            type="rahbari.erfan.mosito.models.AlbumLibrary" />
+
+        <variable
+            name="items"
+            type="String" />
+
+        <variable
+            name="time"
+            type="String" />
+
+        <variable
+            name="artistText"
+            type="String" />
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorBg">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="7dp">
+
+                    <com.jcminarro.roundkornerlayout.RoundKornerRelativeLayout
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        app:corner_radius="5dp">
+
+                        <ImageView
+                            android:id="@+id/imgAlbumCover"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:contentDescription="@string/app_name"
+                            android:scaleType="centerCrop"
+                            app:loadImage="@{albumLibrary.album.cover}"
+                            app:placeholder="@{@drawable/ic_playlist_play}" />
+
+                    </com.jcminarro.roundkornerlayout.RoundKornerRelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:paddingStart="7dp"
+                        android:paddingEnd="7dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@{albumLibrary.album.name}"
+                            android:textSize="25sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvArtist"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@{artistText}"
+                            android:textColor="?colorPrimary"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/tvDetails"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{items + ` muscis, ` + time + ` minutes`}"
+                            android:textColor="@color/secondaryText" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnAdd"
+                            style="@style/defaultButton"
+                            android:layout_width="wrap_content"
+                            android:text="@string/add"
+                            android:visibility="@{albumLibrary.library == null || albumLibrary.library.deleted_at != null ? View.VISIBLE : View.GONE}"
+                            app:icon="@drawable/ic_add" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnSub"
+                            style="@style/defaultButton"
+                            android:text="@string/removed_from_library"
+                            android:visibility="@{albumLibrary.library != null &amp;&amp; albumLibrary.library.deleted_at == null ? View.VISIBLE : View.GONE}"
+                            app:backgroundTint="?themeTransparent"
+                            app:icon="@drawable/ic_close" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?colorBgAccent" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="2dp">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnPlay"
+                        style="@style/secondaryButton"
+                        android:layout_width="0dp"
+                        android:layout_height="42dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:text="@string/play"
+                        app:icon="@drawable/ic_play"
+                        app:iconGravity="textStart" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnShuffle"
+                        style="@style/secondaryButton"
+                        android:layout_width="0dp"
+                        android:layout_height="42dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:text="@string/shuffle"
+                        app:icon="@drawable/ic_shuffle"
+                        app:iconGravity="textStart" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?colorBgAccent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_musics"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:scrollbars="none" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</layout>

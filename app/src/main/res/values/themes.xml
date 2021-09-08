@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.MyTheme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/WhiteColorAccent</item>
+        <item name="colorPrimaryDark">@color/WhiteColorPrimaryDark</item>
+        <item name="colorAccent">@color/WhiteColorPrimary</item>
+        <item name="colorText">@color/WhiteColorAccent</item>
+
+        <item name="android:colorBackground">@color/DarkBackground</item>
+        <item name="blurBg">@color/DarkBlur</item>
+        <item name="themeTransparent">@color/transparentDark</item>
+        <item name="themeTransparentAgain">@color/transparentLight</item>
+    </style>
+</resources>
